@@ -1,3 +1,22 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+  header('location: index.php');
+}else{
+  ?>
+  <!doctype html>
+<html lang="en">
+  <!-- Baris program yang lain -->
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bstoggle="dropdown" aria-expanded="false">
+    <i class="bi bi-person-circle"></i>
+    <!-- Ganti Administrator menjadi baris program dibawah ini -->
+  <?php echo $_SESSION['nama_lengkap'];?>
+  </button>
+  <!-- Baris program yang lain -->
+</html>
+  <?php
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
